@@ -1,0 +1,21 @@
+// GRID (uses grid mixin)
+//////////////////////
+
+.wrapper {
+    @include row;
+}
+ 
+.row {
+    @include row(true);
+}
+      
+[class*='column-'] {
+    width: 100%;
+    min-height: 1px; 
+}
+
+@for $i from 1 through $grid-columns {      
+    .column-#{$i} {
+    	@include col($i/$grid-columns, true);      
+    }   
+}

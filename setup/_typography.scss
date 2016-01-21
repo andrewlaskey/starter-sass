@@ -1,0 +1,94 @@
+// TYPOGRAPHY
+//////////////////////
+
+
+// Base type styles
+///////////////////////////////
+body {
+  color: $body-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  line-height: $base-line-height;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: $header-font-family;
+  font-weight: bold;
+  line-height: $base-line-height;
+  text-rendering: optimizeLegibility; // Fix the character spacing for headings
+}
+
+h1, .h1 {
+  font-size: $base-font-size * $alpha;
+}
+
+h2, .h2 {
+  font-size: $base-font-size * $beta;
+}
+
+h3, .h3 {
+  font-size: $base-font-size * $gamma;
+}
+
+h4, .h4 {
+  font-size: $base-font-size * $delta;
+}
+
+h5, .h5 {
+  font-size: $base-font-size * $epsilon;
+}
+
+h6, .h6 {
+  font-size: $base-font-size * $zeta;
+}
+
+p {
+  margin: 0 0 ($base-line-height/2);
+}
+
+small {
+	font-size: $base-font-size * $zeta;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all $default-duration linear;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+
+  &:active, &:focus {
+    color: $link-hover-color;
+    outline: none;
+  }
+}
+
+hr {
+  margin: $base-line-height 0;
+}
+
+img {
+  margin: 0;
+  max-width: 100%;
+}
+
+abbr, acronym {
+	cursor: help;
+}
+
+address {}
+
+hgroup {}
+
+del {}
+
+blockquote {}
+
+cite {}
+
+pre {}

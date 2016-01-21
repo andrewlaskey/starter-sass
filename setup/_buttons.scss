@@ -1,0 +1,119 @@
+// BUTTONS
+//////////////////////
+
+// These styles are for a rectangle button that changes from outline to solid on rollover.
+// Reverse is for button on dark background.
+// Arrow button option
+
+button,
+input[type="submit"],
+.button {
+	display: inline-block;
+	padding: 0.25em 1.25em;
+	background-color: $button-bg;
+	border-radius: 0px;
+	border: 1px solid $button-color;
+	color: $button-color;
+	font-size: inherit;
+	font-weight: normal;
+	text-decoration: none;
+	background-clip: border-box;
+	transition: background $default-duration linear;
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+	&:hover:not(:disabled),
+	&:active:not(:disabled),
+	&:focus:not(:disabled) {
+		cursor: pointer;
+		color: $button-hover-color;
+		outline: none;
+	}
+
+	&:hover:not(:disabled),
+	&:focus:not(:disabled) {
+		background-color: $button-hover-bg;
+		border-color: $button-hover-bg;
+	}
+
+	&:active:not(:disabled) {
+		background-color: $primary-color;
+		border: 1px solid $primary-color;
+		border-color: $primary-color;
+	}
+}
+
+.button--reverse {
+	color: $body-bg;
+	border-color: $body-bg;
+	background-color: $dark;
+}
+
+.button--arrow {
+	position: relative;
+
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 0;
+		height: 0;
+		transform: translate3d(-10px, 0, 0);
+		opacity: 0;
+		transition: all $default-duration linear;
+	}
+
+	&:before {
+		top: 0.6em;
+		right: 8px;
+		border-style: solid;
+		border-width: 6px 0 6px 6px; 
+		border-color: transparent transparent transparent $button-color;
+	}
+
+	&:after {
+		top: 0.75em;
+		right: 10px;
+		border-style: solid;
+		border-width: 4px 0 4px 4px; 
+		border-color: transparent transparent transparent $button-bg;
+	}
+
+	&:hover:not(:disabled),
+	&:active:not(:disabled),
+	&:focus:not(:disabled) {
+		&:before,
+		&:after {
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
+		}
+
+		&:before {
+			border-left-color: $button-hover-color;
+		}
+
+		&:after {
+			border-left-color: $button-hover-bg;
+		}
+	}
+
+	&:active:not(:disabled) {
+		&:after {
+			border-left-color: $primary-color;
+		}
+	}
+
+	&.button--reverse {
+		&:before {
+			border-left-color: $body-bg;
+		}
+
+		&:after {
+			border-left-color: $dark;
+		}
+	}
+}
